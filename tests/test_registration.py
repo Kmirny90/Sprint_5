@@ -33,8 +33,7 @@ class TestRegistrationNewCredentials:
         driver.find_element(*Locators.REGISTER_BUTTON).click()
 
 
-        error_elements = driver.find_element(*Locators.PASSWORD_ERROR).text
-        assert error_elements == 'Некорректный пароль'
+        assert driver.find_element(*Locators.PASSWORD_ERROR).text == 'Некорректный пароль'
 
 
 
