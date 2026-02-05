@@ -18,8 +18,8 @@ class TestPersonalAccount:
 
         driver.find_element(*Locators.PERSONAL_ACCOUNT_BUTTON_REGISTERED_USER).click()
 
-        WebDriverWait(driver, 10).until(EC.url_contains("/account/profile"))
-        assert "profile" in driver.current_url
+
+        assert WebDriverWait(driver, 10).until(EC.url_contains(account_page))
 
 
     def test_go_from_account_to_constructor(self, driver):
@@ -64,5 +64,5 @@ class TestPersonalAccount:
         WebDriverWait(driver, 10).until(EC.url_to_be(account_page))
         driver.find_element(*Locators.LOGOUT_BUTTON).click()
 
-        WebDriverWait(driver, 10).until(EC.url_contains("/login"))
-        assert "/login" in driver.current_url
+
+        assert WebDriverWait(driver, 10).until(EC.url_contains(login_page))
