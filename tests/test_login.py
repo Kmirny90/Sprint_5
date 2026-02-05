@@ -15,7 +15,7 @@ class TestLogin:
         driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
         driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
         driver.find_element(*Locators.LOGIN).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
 
         assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
 
@@ -28,7 +28,7 @@ class TestLogin:
         driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
         driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
         driver.find_element(*Locators.LOGIN).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
 
         assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
 
@@ -41,7 +41,7 @@ class TestLogin:
         driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
         driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
         driver.find_element(*Locators.LOGIN).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
 
         assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
 
@@ -54,6 +54,6 @@ class TestLogin:
         driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
         driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
         driver.find_element(*Locators.LOGIN).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
 
         assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()

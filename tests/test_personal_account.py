@@ -1,6 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from curl import login_page
+from curl import *
 from locators import Locators
 from data import Credentials
 
@@ -14,7 +14,7 @@ class TestPersonalAccount:
         driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
         driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
         driver.find_element(*Locators.LOGIN).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
 
         driver.find_element(*Locators.PERSONAL_ACCOUNT_BUTTON_REGISTERED_USER).click()
 
@@ -28,12 +28,12 @@ class TestPersonalAccount:
         driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
         driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
         driver.find_element(*Locators.LOGIN).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
 
         driver.find_element(*Locators.PERSONAL_ACCOUNT_BUTTON_REGISTERED_USER).click()
         driver.find_element(*Locators.CONSTRUCTOR_BUTTON).click()
 
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
         assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
 
 
@@ -43,12 +43,12 @@ class TestPersonalAccount:
         driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
         driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
         driver.find_element(*Locators.LOGIN).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
 
         driver.find_element(*Locators.PERSONAL_ACCOUNT_BUTTON_REGISTERED_USER).click()
         driver.find_element(*Locators.LOGO_BUTTON).click()
 
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
         assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
 
 
@@ -58,10 +58,10 @@ class TestPersonalAccount:
         driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
         driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
         driver.find_element(*Locators.LOGIN).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
 
         driver.find_element(*Locators.PERSONAL_ACCOUNT_BUTTON_REGISTERED_USER).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/account/profile"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(account_page))
         driver.find_element(*Locators.LOGOUT_BUTTON).click()
 
         WebDriverWait(driver, 10).until(EC.url_contains("/login"))

@@ -16,7 +16,7 @@ class TestRegistrationNewCredentials:
         driver.find_element(*Locators.EMAIL_REGISTER).send_keys(email)
         driver.find_element(*Locators.PASSWORD_REGISTER).send_keys(password)
         driver.find_element(*Locators.REGISTER_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/login"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(login_page))
 
         assert "login" in driver.current_url
 
