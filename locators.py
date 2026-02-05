@@ -2,15 +2,15 @@ from selenium.webdriver.common.by import By
 
 class Locators:
     #test_registration
-    NAME = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[1]/div/div/input") #Поле Имя
-    EMAIL_REGISTER = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input") #Поле Email
-    PASSWORD_REGISTER =(By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[3]/div/div/input") #Поле Password
+    NAME = (By.XPATH, "//label[text()='Имя']/following-sibling::input") #Поле Имя
+    EMAIL_REGISTER = (By.XPATH, "//label[text()='Email']/following-sibling::input") #Поле Email
+    PASSWORD_REGISTER =(By.XPATH, "//label[text()='Пароль']/following-sibling::input") #Поле Password
     REGISTER_BUTTON = (By.XPATH, "//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa']") #Кнопка Зарегистрироваться
     PASSWORD_ERROR = (By.XPATH, "//p[text()='Некорректный пароль']") #Сообщение об ошибке
     #test_login
     LOGIN_BUTTON = (By.XPATH, "//button[text()='Войти в аккаунт']") #Кнопка Войти в аккаунт
-    EMAIL = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[1]/div/div/input") #Поле Email
-    PASSWORD = (By.XPATH, "//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input") #Поле Password
+    EMAIL = (By.XPATH, "//label[text()='Email']/following-sibling::input") #Поле Email
+    PASSWORD = (By.XPATH, "//label[text()='Пароль']/following-sibling::input") #Поле Password
     LOGIN = (By.XPATH, "//button[text()='Войти']") #Кнопка Войти
     ORDER_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']") #Кнопка Оформить заказ
     PERSONAL_ACCOUNT_BUTTON = (By.CSS_SELECTOR, "[href='/account']") #Кнопка Личный Кабинет
