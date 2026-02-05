@@ -10,7 +10,7 @@ def driver():
     options = Options()
     options.add_argument("--window-size=1920x1080")
     options.add_experimental_option("prefs", {"profile.password_manager_leak_detection": False})
-    #options.add_argument("--headless")
+
     browser = webdriver.Chrome(options=options)
     browser.get(main_site)
     yield browser
