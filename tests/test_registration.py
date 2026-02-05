@@ -19,7 +19,7 @@ class TestRegistrationNewCredentials:
         WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/login"))
 
         assert "login" in driver.current_url
-        driver.quit()
+
 
 
     def test_registration_with_short_password(self, driver):
@@ -35,7 +35,7 @@ class TestRegistrationNewCredentials:
 
         error_elements = driver.find_element(*Locators.PASSWORD_ERROR).text
         assert error_elements == 'Некорректный пароль'
-        driver.quit()
+
 
 
 

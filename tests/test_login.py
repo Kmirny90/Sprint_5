@@ -18,7 +18,7 @@ class TestLogin:
         WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
 
         assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
-        driver.quit()
+
 
     def test_login_personal_account(self, driver):
 
@@ -31,7 +31,7 @@ class TestLogin:
         WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
 
         assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
-        driver.quit()
+
 
     def test_login_register_page(self, driver):
 
@@ -44,7 +44,7 @@ class TestLogin:
         WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
 
         assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
-        driver.quit()
+
 
     def test_login_recover_password(self, driver):
 
@@ -57,4 +57,3 @@ class TestLogin:
         WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.education-services.ru/"))
 
         assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
-        driver.quit()

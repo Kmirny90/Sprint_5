@@ -16,7 +16,7 @@ class TestConstructor:
         active_tab = driver.find_element(*Locators.ACTIVE_TAB)
 
         assert "Соусы" in active_tab.text
-        driver.quit()
+
 
     def test_switch_to_filling(self, login):
 
@@ -29,7 +29,7 @@ class TestConstructor:
         active_tab = driver.find_element(*Locators.ACTIVE_TAB)
 
         assert "Начинки" in active_tab.text
-        driver.quit()
+
 
     def test_switch_to_buns(self, login):
 
@@ -43,7 +43,7 @@ class TestConstructor:
         active_tab = driver.find_element(*Locators.ACTIVE_TAB)
 
         assert "Булки" in active_tab.text
-        driver.quit()
+
 
 
 
