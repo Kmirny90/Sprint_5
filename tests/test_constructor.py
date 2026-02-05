@@ -14,7 +14,7 @@ class TestConstructor:
         driver.find_element(*Locators.SAUCES_SECTION).click()
 
         active_tab = driver.find_element(*Locators.ACTIVE_TAB)
-        print(f"Текст активного таба: '{active_tab.text}'")
+
         assert "Соусы" in active_tab.text
         driver.quit()
 
@@ -27,7 +27,7 @@ class TestConstructor:
         driver.find_element(*Locators.FILLING_SECTION).click()
 
         active_tab = driver.find_element(*Locators.ACTIVE_TAB)
-        #print(f"Текст активного таба: '{active_tab.text}'")
+
         assert "Начинки" in active_tab.text
         driver.quit()
 
@@ -41,7 +41,7 @@ class TestConstructor:
         driver.find_element(*Locators.BUNS_SECTION).click()
 
         active_tab = driver.find_element(*Locators.ACTIVE_TAB)
-        #print(f"Текст активного таба: '{active_tab.text}'")
+
         assert "Булки" in active_tab.text
         driver.quit()
 
