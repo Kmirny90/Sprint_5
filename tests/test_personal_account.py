@@ -1,0 +1,68 @@
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from curl import *
+from locators import Locators
+from data import Credentials
+
+
+class TestPersonalAccount:
+
+    def test_go_to_personal_account(self, driver):
+
+        driver.get(login_page)
+
+        driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
+        driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
+        driver.find_element(*Locators.LOGIN).click()
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+
+        driver.find_element(*Locators.PERSONAL_ACCOUNT_BUTTON_REGISTERED_USER).click()
+
+
+        assert WebDriverWait(driver, 10).until(EC.url_contains(account_page))
+
+
+    def test_go_from_account_to_constructor(self, driver):
+        driver.get(login_page)
+
+        driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
+        driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
+        driver.find_element(*Locators.LOGIN).click()
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+
+        driver.find_element(*Locators.PERSONAL_ACCOUNT_BUTTON_REGISTERED_USER).click()
+        driver.find_element(*Locators.CONSTRUCTOR_BUTTON).click()
+
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
+
+
+    def test_go_from_account_to_constructor_logo(self, driver):
+        driver.get(login_page)
+
+        driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
+        driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
+        driver.find_element(*Locators.LOGIN).click()
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+
+        driver.find_element(*Locators.PERSONAL_ACCOUNT_BUTTON_REGISTERED_USER).click()
+        driver.find_element(*Locators.LOGO_BUTTON).click()
+
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        assert driver.find_element(*Locators.ORDER_BUTTON).is_displayed()
+
+
+    def test_logout_from_account(self, driver):
+        driver.get(login_page)
+
+        driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
+        driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
+        driver.find_element(*Locators.LOGIN).click()
+        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+
+        driver.find_element(*Locators.PERSONAL_ACCOUNT_BUTTON_REGISTERED_USER).click()
+        WebDriverWait(driver, 10).until(EC.url_to_be(account_page))
+        driver.find_element(*Locators.LOGOUT_BUTTON).click()
+
+
+        assert WebDriverWait(driver, 10).until(EC.url_contains(login_page))
